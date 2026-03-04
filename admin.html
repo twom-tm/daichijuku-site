@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理画面｜大地塾ブログ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --color-white: #FFFFFF;
+            --color-bg: #F8F9FA;
+            --color-navy: #0F1C2E;
+            --color-navy-light: #1A2D45;
+            --color-accent: #4C9595;
+            --color-accent-dark: #3D7A7A;
+            --color-accent-light: #E8F4F4;
+            --color-text: #2C3E50;
+            --color-text-muted: #6B7B8D;
+            --color-text-light: #94A3B8;
+            --color-border: #E2E8F0;
+            --color-border-light: #F0F2F5;
+            --color-danger: #E53E3E;
+            --color-danger-light: #FFF5F5;
+            --font-body: 'Noto Sans JP', 'Inter', sans-serif;
+            --font-en: 'Inter', sans-serif;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            min-height: 100vh;
+        }
+
+        /* ── Layout ── */
+        .admin-header {
+            background: var(--color-navy);
+            color: var(--color-white);
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .admin-header h1 {
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .admin-header h1 span {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .admin-header-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        .admin-header-links a:hover {
+            color: white;
+        }
+
+        .admin-body {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: calc(100vh - 56px);
+        }
+
+        /* ── Sidebar: Post List ── */
+        .sidebar {
+            background: var(--color-white);
+            border-right: 1px solid var(--color-border-light);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--color-border-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-header h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+
+        .btn-new {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 14px;
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font-body);
+            transition: background 0.2s;
+        }
+
+        .btn-new:hover {
+            background: var(--color-accent-dark);
+        }
+
+        .post-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .post-item {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--color-border-light);
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .post-item:hover {
+            background: var(--color-bg);
+        }
+
+        .post-item.is-active {
+            background: var(--color-accent-light);
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .post-item-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-navy);
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .post-item-meta {
+            font-size: 0.7rem;
+            color: var(--color-text-light);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .post-item-status {
+            font-size: 0.6rem;
+            font-weight: 600;
+            padding: 1px 8px;
+            border-radius: 10px;
+        }
+
+        .post-item-status--published {
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+        }
+
+        .post-item-status--draft {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+
+        .no-posts {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+        }
+
+        /* ── Editor ── */
+        .editor {
+            padding: 32px 40px;
+            max-width: 860px;
+        }
+
+        .editor-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        .editor-empty svg {
+            width: 48px;
+            height: 48px;
+            opacity: 0.3;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            margin-bottom: 6px;
+            letter-spacing: 0.03em;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--color-text);
+            background: var(--color-white);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--color-accent);
+        }
+
+        .form-input--title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            border: none;
+            padding: 8px 0;
+            border-bottom: 2px solid var(--color-border-light);
+            border-radius: 0;
+        }
+
+        .form-input--title:focus {
+            border-bottom-color: var(--color-accent);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-textarea {
+            min-height: 320px;
+            line-height: 1.9;
+            resize: vertical;
+        }
+
+        .form-hint {
+            font-size: 0.7rem;
+            color: var(--color-text-light);
+            margin-top: 4px;
+        }
+
+        /* Editor toolbar */
+        .editor-toolbar {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+            padding: 8px;
+            background: var(--color-bg);
+            border-radius: var(--radius-sm);
+            flex-wrap: wrap;
+        }
+
+        .toolbar-btn {
+            padding: 6px 10px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            border-radius: 4px;
+            transition: all 0.15s;
+            font-weight: 500;
+        }
+
+        .toolbar-btn:hover {
+            background: var(--color-white);
+            color: var(--color-navy);
+        }
+
+        .toolbar-sep {
+            width: 1px;
+            background: var(--color-border);
+            margin: 4px 4px;
+        }
+
+        /* Action bar */
+        .action-bar {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-border-light);
+            align-items: center;
+        }
+
+        .btn-save {
+            padding: 10px 28px;
+            background: var(--color-navy);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font-body);
+            transition: background 0.2s;
+        }
+
+        .btn-save:hover {
+            background: var(--color-navy-light);
+        }
+
+        .btn-save--publish {
+            background: var(--color-accent);
+        }
+
+        .btn-save--publish:hover {
+            background: var(--color-accent-dark);
+        }
+
+        .btn-delete {
+            padding: 10px 20px;
+            background: transparent;
+            color: var(--color-danger);
+            border: 1px solid var(--color-danger);
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: var(--font-body);
+            margin-left: auto;
+            transition: all 0.2s;
+        }
+
+        .btn-delete:hover {
+            background: var(--color-danger-light);
+        }
+
+        .save-msg {
+            font-size: 0.8rem;
+            color: var(--color-accent);
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .save-msg.show {
+            opacity: 1;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--color-navy);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s var(--ease);
+            z-index: 9999;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .admin-body {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                max-height: 200px;
+            }
+
+            .editor {
+                padding: 24px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="admin-header">
+        <h1>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+            </svg>
+            大地塾 管理画面 <span>ブログ管理</span>
+        </h1>
+        <div class="admin-header-links">
+            <a href="index.html">← サイトを見る</a>
+            <a href="blog.html">ブログページ</a>
+        </div>
+    </header>
+
+    <div class="admin-body">
+        <!-- Sidebar: Post List -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>記事一覧</h2>
+                <button class="btn-new" onclick="newPost()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                    新規作成
+                </button>
+            </div>
+            <div class="post-list" id="postList"></div>
+        </aside>
+
+        <!-- Editor -->
+        <div class="editor" id="editorArea">
+            <div class="editor-empty" id="editorEmpty">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+                <p>左のサイドバーから記事を選択、<br>または「新規作成」をクリックしてください。</p>
+            </div>
+
+            <form id="editorForm" style="display:none;" onsubmit="return false;">
+                <div class="form-group">
+                    <input type="text" class="form-input form-input--title" id="postTitle" placeholder="記事タイトルを入力...">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">日付</label>
+                        <input type="date" class="form-input" id="postDate">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">カテゴリ</label>
+                        <select class="form-select" id="postCategory">
+                            <option value="市場分析">市場分析</option>
+                            <option value="学習ヒント">学習ヒント</option>
+                            <option value="活動報告">活動報告</option>
+                            <option value="イベント">イベント</option>
+                            <option value="ニュース">ニュース</option>
+                            <option value="お知らせ">お知らせ</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">概要（記事一覧に表示）</label>
+                    <input type="text" class="form-input" id="postExcerpt" placeholder="記事の概要を一行で...">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">画像URL（任意）</label>
+                    <input type="text" class="form-input" id="postImage" placeholder="https://example.com/image.jpg">
+                    <p class="form-hint">サムネイル画像のURLを入力してください。空欄の場合はプレースホルダーが表示されます。</p>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">本文（HTML対応）</label>
+                    <div class="editor-toolbar">
+                        <button type="button" class="toolbar-btn" onclick="insertTag('h3')"><b>H3</b></button>
+                        <button type="button" class="toolbar-btn" onclick="insertTag('strong')"><b>B</b></button>
+                        <button type="button" class="toolbar-btn" onclick="insertTag('em')"><i>I</i></button>
+                        <div class="toolbar-sep"></div>
+                        <button type="button" class="toolbar-btn" onclick="insertTag('p')">段落</button>
+                        <button type="button" class="toolbar-btn" onclick="insertBr()">改行</button>
+                        <button type="button" class="toolbar-btn" onclick="insertTag('ul')">リスト</button>
+                        <button type="button" class="toolbar-btn" onclick="insertLink()">リンク</button>
+                    </div>
+                    <textarea class="form-textarea" id="postContent"
+                        placeholder="記事本文をHTML形式で入力してください...&#10;&#10;例:&#10;<p>段落テキスト</p>&#10;<h3>見出し</h3>&#10;<p><strong>太字</strong>や<em>斜体</em>も使えます</p>"></textarea>
+                </div>
+
+                <div class="action-bar">
+                    <button type="button" class="btn-save" onclick="savePost('draft')">下書き保存</button>
+                    <button type="button" class="btn-save btn-save--publish"
+                        onclick="savePost('published')">公開する</button>
+                    <span class="save-msg" id="saveMsg">保存しました</span>
+                    <button type="button" class="btn-delete" id="btnDelete" onclick="deletePost()"
+                        style="display:none;">削除</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const BLOG_KEY = 'daichijuku_blog_posts';
+        let currentPostId = null;
+
+        function getPosts() {
+            try { return JSON.parse(localStorage.getItem(BLOG_KEY)) || []; }
+            catch { return []; }
+        }
+
+        function savePosts(posts) {
+            localStorage.setItem(BLOG_KEY, JSON.stringify(posts));
+        }
+
+        function genId() {
+            return 'post_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+        }
+
+        function today() {
+            return new Date().toISOString().split('T')[0];
+        }
+
+        // ── Render post list ──
+        function renderList() {
+            const posts = getPosts().sort((a, b) => new Date(b.date) - new Date(a.date));
+            const list = document.getElementById('postList');
+
+            if (posts.length === 0) {
+                list.innerHTML = '<div class="no-posts">記事がありません</div>';
+                return;
+            }
+
+            list.innerHTML = posts.map(p => `
+        <div class="post-item ${p.id === currentPostId ? 'is-active' : ''}" onclick="loadPost('${p.id}')">
+          <div class="post-item-title">${p.title || '（無題）'}</div>
+          <div class="post-item-meta">
+            <span>${p.date}</span>
+            <span class="post-item-status post-item-status--${p.status}">${p.status === 'published' ? '公開中' : '下書き'}</span>
+            <span>${p.category || ''}</span>
+          </div>
+        </div>
+      `).join('');
+        }
+
+        // ── New post ──
+        function newPost() {
+            currentPostId = null;
+            showEditor();
+            document.getElementById('postTitle').value = '';
+            document.getElementById('postDate').value = today();
+            document.getElementById('postCategory').value = '市場分析';
+            document.getElementById('postExcerpt').value = '';
+            document.getElementById('postImage').value = '';
+            document.getElementById('postContent').value = '';
+            document.getElementById('btnDelete').style.display = 'none';
+            renderList();
+        }
+
+        // ── Load post ──
+        function loadPost(id) {
+            const post = getPosts().find(p => p.id === id);
+            if (!post) return;
+
+            currentPostId = id;
+            showEditor();
+            document.getElementById('postTitle').value = post.title || '';
+            document.getElementById('postDate').value = post.date || today();
+            document.getElementById('postCategory').value = post.category || '市場分析';
+            document.getElementById('postExcerpt').value = post.excerpt || '';
+            document.getElementById('postImage').value = post.image || '';
+            document.getElementById('postContent').value = post.content || '';
+            document.getElementById('btnDelete').style.display = '';
+            renderList();
+        }
+
+        // ── Save post ──
+        function savePost(status) {
+            const posts = getPosts();
+            const data = {
+                id: currentPostId || genId(),
+                title: document.getElementById('postTitle').value.trim(),
+                date: document.getElementById('postDate').value || today(),
+                category: document.getElementById('postCategory').value,
+                excerpt: document.getElementById('postExcerpt').value.trim(),
+                image: document.getElementById('postImage').value.trim(),
+                content: document.getElementById('postContent').value,
+                status: status,
+                updatedAt: new Date().toISOString()
+            };
+
+            if (!data.title) {
+                showToast('タイトルを入力してください');
+                return;
+            }
+
+            if (currentPostId) {
+                const idx = posts.findIndex(p => p.id === currentPostId);
+                if (idx !== -1) posts[idx] = data;
+            } else {
+                currentPostId = data.id;
+                posts.push(data);
+            }
+
+            savePosts(posts);
+            document.getElementById('btnDelete').style.display = '';
+            renderList();
+            showToast(status === 'published' ? '記事を公開しました' : '下書きを保存しました');
+        }
+
+        // ── Delete post ──
+        function deletePost() {
+            if (!currentPostId) return;
+            if (!confirm('この記事を削除しますか？')) return;
+
+            const posts = getPosts().filter(p => p.id !== currentPostId);
+            savePosts(posts);
+            currentPostId = null;
+            hideEditor();
+            renderList();
+            showToast('記事を削除しました');
+        }
+
+        // ── UI Helpers ──
+        function showEditor() {
+            document.getElementById('editorForm').style.display = '';
+            document.getElementById('editorEmpty').style.display = 'none';
+        }
+
+        function hideEditor() {
+            document.getElementById('editorForm').style.display = 'none';
+            document.getElementById('editorEmpty').style.display = '';
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // ── Toolbar helpers ──
+        function insertTag(tag) {
+            const ta = document.getElementById('postContent');
+            const start = ta.selectionStart;
+            const end = ta.selectionEnd;
+            const selected = ta.value.substring(start, end);
+            const before = ta.value.substring(0, start);
+            const after = ta.value.substring(end);
+
+            if (tag === 'ul') {
+                ta.value = before + '<ul>\n  <li>' + (selected || 'リスト項目') + '</li>\n</ul>' + after;
+            } else {
+                ta.value = before + '<' + tag + '>' + (selected || '') + '</' + tag + '>' + after;
+            }
+            ta.focus();
+        }
+
+        function insertBr() {
+            const ta = document.getElementById('postContent');
+            const pos = ta.selectionStart;
+            ta.value = ta.value.substring(0, pos) + '<br>' + ta.value.substring(pos);
+            ta.focus();
+        }
+
+        function insertLink() {
+            const url = prompt('リンクURL:');
+            if (!url) return;
+            const text = prompt('リンクテキスト:', url);
+            const ta = document.getElementById('postContent');
+            const pos = ta.selectionStart;
+            ta.value = ta.value.substring(0, pos) + `<a href="${url}" target="_blank">${text || url}</a>` + ta.value.substring(pos);
+            ta.focus();
+        }
+
+        // ── Init ──
+        renderList();
+    </script>
+</body>
+
+</html>
