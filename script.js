@@ -178,4 +178,91 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ──────────────────────────────────────
+  // 8. Voice Slider & Modal
+  // ──────────────────────────────────────
+  const voiceGrid = document.getElementById('voiceGrid');
+  const voicePrev = document.getElementById('voicePrev');
+  const voiceNext = document.getElementById('voiceNext');
+
+  if (voiceGrid && voicePrev && voiceNext) {
+    const scrollAmount = 340; // 320px card + 20px gap
+
+    const updateArrows = () => {
+      voicePrev.disabled = voiceGrid.scrollLeft <= 0;
+      voiceNext.disabled = voiceGrid.scrollLeft >= voiceGrid.scrollWidth - voiceGrid.clientWidth - 5;
+    };
+
+    voiceGrid.addEventListener('scroll', updateArrows, { passive: true });
+
+    voicePrev.addEventListener('click', () => {
+      voiceGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    voiceNext.addEventListener('click', () => {
+      voiceGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    // Initial check
+    setTimeout(updateArrows, 100);
+    window.addEventListener('resize', updateArrows);
+  }
+
+  // Modal logic
+  const voiceModal = document.getElementById('voiceModal');
+  const voiceModalBody = document.getElementById('voiceModalBody');
+  const voiceModalClose = document.getElementById('voiceModalClose');
+  const readMoreBtns = document.querySelectorAll('.voice-read-more');
+
+  if (voiceModal && voiceModalBody) {
+    const closeModal = () => {
+      voiceModal.close();
+      document.body.style.overflow = '';
+    };
+
+    if (voiceModalClose) voiceModalClose.addEventListener('click', closeModal);
+
+    // Close on click outside the dialog
+    voiceModal.addEventListener('click', (e) => {
+      if (e.target === voiceModal) {
+        closeModal();
+      }
+    });
+
+    readMoreBtns.forEach((btn, index) => {
+      const wrapper = btn.parentElement.previousElementSibling;
+      const card = btn.closest('.voice-card');
+
+      console.log(`Checking voice btn ${index}:`, { hasWrapper: !!wrapper, isTextWrapper: wrapper?.classList.contains('voice-text-wrapper') });
+
+      if (wrapper && wrapper.classList.contains('voice-text-wrapper')) {
+        const textEl = wrapper.querySelector('.voice-text');
+        // Hide button if text is short
+        if (textEl && textEl.scrollHeight <= 100) {
+          btn.parentElement.style.display = 'none';
+          wrapper.style.maxHeight = 'none';
+        }
+
+        btn.addEventListener('click', () => {
+          console.log(`Voice btn ${index} clicked`);
+          if (card) {
+            // Clone the card's content except the read-more button
+            const metaHtml = card.querySelector('.voice-meta') ? card.querySelector('.voice-meta').outerHTML : '';
+            const titleHtml = card.querySelector('.voice-title') ? card.querySelector('.voice-title').outerHTML : '';
+            const textHtml = textEl ? textEl.outerHTML : '';
+
+            voiceModalBody.innerHTML = `
+              ${metaHtml}
+              ${titleHtml}
+              ${textHtml}
+            `;
+
+            voiceModal.showModal();
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      }
+    });
+  }
+
 });

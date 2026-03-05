@@ -17,7 +17,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 
 <body>
@@ -33,8 +33,8 @@
         <a href="#curriculum">学べる内容</a>
         <a href="#courses">コース</a>
         <a href="#flow">学習の流れ</a>
+        <a href="#voice">お客様の声</a>
         <a href="#faq">よくある質問</a>
-        <a href="blog.html">ブログ</a>
         <a href="#final-cta" class="header-cta btn">説明会を見る</a>
       </nav>
       <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
@@ -576,6 +576,225 @@
     </section>
 
     <!-- ============================================================
+         VOICE (お客様の声)
+         ============================================================ -->
+    <section class="section--white" id="voice">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="section-label">Voice</p>
+          <h2 class="section-title">お客様の声</h2>
+          <p class="section-subtitle">
+            大地塾で学び、自立した判断力を身につけた受講生の声をご紹介します。
+          </p>
+        </div>
+
+        <div class="voice-slider-wrapper">
+          <button class="voice-slider-arrow prev" id="voicePrev" aria-label="前へ">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="voice-slider-arrow next" id="voiceNext" aria-label="次へ">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <div class="voice-grid" id="voiceGrid">
+            <!-- Voice 1 -->
+            <div class="card voice-card fade-in">
+              <div class="voice-meta">
+                <span class="voice-badge">女性・40代</span>
+                <span class="voice-location">福島県</span>
+              </div>
+              <h3 class="voice-title">私の不安を取り除いてくれた 大地塾</h3>
+              <div class="voice-text-wrapper">
+                <p class="voice-text">
+                  暗号資産と言う言葉は、良く耳にするけど、暗号資産＝怪しいと思う気持ちの方が強かった当時。。でも困っていた時に、大地塾のお話しを聞いて、講義を受ける事を決めました。<br>
+                  初回の講義は、難しい言葉が出てきて、圧倒されましたが、大地先生は、細かく丁寧に説明してくれて、日を追うごとに、講義が楽しみになりました。<br>
+                  去年までの私には考えられないくらいの、目覚ましい進歩をこの大地塾で実現した事に、感謝、感謝です。そして、あんなに不安だった気持ちが、今では安心して大地先生の元 トレードが出来るようになりました。<br>
+                  自分の資産を自分で管理できる！夢が叶いました。。<br>
+                  暗号資産 講義 とても勉強になりました。これからも 宜しくお願いいたします。
+                </p>
+              </div>
+              <div class="voice-read-more-container">
+                <button class="voice-read-more" aria-label="続きを読む" aria-expanded="false">
+                  <span>続きを読む</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Voice 2 -->
+            <div class="card voice-card fade-in fade-in-delay-1">
+              <div class="voice-meta">
+                <span class="voice-badge">女性・50代</span>
+                <span class="voice-location">長野県</span>
+              </div>
+              <h3 class="voice-title">お金を払って学ぶ姿勢の重要性</h3>
+              <div class="voice-text-wrapper">
+                <p class="voice-text">
+                  私が大地塾に入った時、大地さんの｢お金を納めてしっかり学んで欲しい｣この言葉その時も何となく理解出来ました。今ではもっと深いレベルで理解出来ています。塾に入る時のお金はけして安いものではありませんが、今では、その金額以上の価値を得ています。<br>
+                  暗号資産の勉強は本当に難しく、携帯操作では逃げ出したくなるくらいに分からなくて辛い時もありました。でも、これに人生をかけてみようと思ってお金を出した時の自分の気持ちを思いだして、しがみついてきました。<br>
+                  今は操作も慣れて来て、楽しくて楽しくて学んで良かったと思っています。一番は大地さんの優しさ、ユーモアのある教え方だったからこそ、ついて来れたと思っています。<br>
+                  大地さん須藤さん、共に私の心に寄り添って、辛抱強く教えてくれた事に感謝でいっぱいです。これからの時代に必ず必要になる事を先駆けて学べた事この縁を大切にしたいと思います。
+                </p>
+              </div>
+              <div class="voice-read-more-container">
+                <button class="voice-read-more" aria-label="続きを読む" aria-expanded="false">
+                  <span>続きを読む</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Voice 3 -->
+            <div class="card voice-card fade-in fade-in-delay-2">
+              <div class="voice-meta">
+                <span class="voice-badge">女性・60代</span>
+                <span class="voice-location">群馬県</span>
+              </div>
+              <h3 class="voice-title">自立した資産運用</h3>
+              <div class="voice-text-wrapper">
+                <p class="voice-text">
+                  何もわからないまま、人に言われるがままに暗号通貨に関わってしまい凄く大変な思いをしましたが（損失も含む）大地塾と出会い変わりました。<br>
+                  今まではわからない事、困った事があっても聞くところが無く個人コースを受講したおかげで、お金の仕組み、取引所の操作、暗号資産の保有、引き出し方、税金の事等で心配や不安な事も分かり易く何度も教えて下さり今では不安なく操作もできるようになりニュースやリストを読み解く力も徐々に覚え楽しくなりました。<br>
+                  これからは暗号通貨の時代です。大地塾個人コースは卒業の為、エキスパートコースに申し込みました。トレードを覚えてこれからは資産を増やして行く勉強をして行きたいと思います。楽しみです。<br>
+                  暗号通貨は良く危険とか聞きますがきちんと勉強して行えば安心して資産運用が出来ると思います。私は大地塾と出会えた事に感謝です。これからも宜しくお願い致します。
+                </p>
+              </div>
+              <div class="voice-read-more-container">
+                <button class="voice-read-more" aria-label="続きを読む" aria-expanded="false">
+                  <span>続きを読む</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Voice 4 -->
+            <div class="card voice-card fade-in">
+              <div class="voice-meta">
+                <span class="voice-badge">女性・30代</span>
+                <span class="voice-location">東京都</span>
+              </div>
+              <h3 class="voice-title">主婦が勉強する副作用</h3>
+              <div class="voice-text-wrapper">
+                <p class="voice-text">
+                  大地塾を知り合いに紹介され、ポイ活感覚、おこづかい目的で始めました。自分のペースで無理のない時間に講義を視聴でき、仕事や子育てに追われる私にはとても助かりました。<br>
+                  頭の中が家族のことばかりだったためか、暗号通貨のニュース解説では毎回知らなかった世の中のお金の動きを知り衝撃で目が覚める感覚です！<br>
+                  そして毎日バタバタとイライラで過ごしていたはずが、いつの間にか暗号通貨の数値変動やアップデートされる情報に気持ちが向き家族へのイライラが減った気がします。楽しい雰囲気で学べし今は趣味でもそのうち副業として、子供が大きくなったら自慢出来たらいいなぁと思います。
+                </p>
+              </div>
+              <div class="voice-read-more-container">
+                <button class="voice-read-more" aria-label="続きを読む" aria-expanded="false">
+                  <span>続きを読む</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Voice 5 -->
+            <div class="card voice-card fade-in fade-in-delay-1">
+              <div class="voice-meta">
+                <span class="voice-badge">女性・50代</span>
+                <span class="voice-location">群馬県</span>
+              </div>
+              <h3 class="voice-title">学びを通して感じた暗号通貨の可能性</h3>
+              <div class="voice-text-wrapper">
+                <p class="voice-text">
+                  日本人にとって暗号通貨はまだ身近なものではなく、怪しい・怖いという印象が先立ちます。私も最初は不安でしたが、大地塾では「お金とは何か」という根本から教えていただき、暗号通貨が全く新しい金融の仕組みであることを丁寧に解説していただきました。<br>
+                  そのおかげで暗号通貨を正しく学び、正しく使えばとても価値あるものだと気づくことができました。６ヶ月の学びを通じて、暗号通貨はこれから必ず私たちの生活に根付くと強く感じました。<br>
+                  今の学びは、近い将来必ず「学んでいて良かった」と思える財産になると確信しています。これからも大地塾で前向きに学び続けていきたいと思います。最後に、いつも楽しく熱心にご指導いただいている若き塾長に感謝しております！
+                </p>
+              </div>
+              <div class="voice-read-more-container">
+                <button class="voice-read-more" aria-label="続きを読む" aria-expanded="false">
+                  <span>続きを読む</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Voice 6 -->
+            <div class="card voice-card fade-in fade-in-delay-2">
+              <div class="voice-meta">
+                <span class="voice-badge">男性・30代</span>
+                <span class="voice-location">大分県</span>
+              </div>
+              <h3 class="voice-title">視野が広がった大地塾</h3>
+              <div class="voice-text-wrapper">
+                <p class="voice-text">
+                  これまでは国内取引所を2社しか使ったことがなく、正直トレードの幅も狭いと感じていました。ですが、大地塾で海外取引所も含めた活用方法を学んだことで一気に視野が広がりました。<br>
+                  さらに、ニュースの読み解き方や基礎となる情報の押さえ方まで丁寧に教えていただき、自分で考えて行動できる力がつきました。おかげでトレードが不安ではなくなり、今では楽しみながら挑戦できています。本当に受講してよかったと思います。
+                </p>
+              </div>
+              <div class="voice-read-more-container">
+                <button class="voice-read-more" aria-label="続きを読む" aria-expanded="false">
+                  <span>続きを読む</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Voice 7 -->
+            <div class="card voice-card fade-in">
+              <div class="voice-meta">
+                <span class="voice-badge">女性・50代</span>
+                <span class="voice-location">広島県</span>
+              </div>
+              <h3 class="voice-title">きづいたらトレーダーに！</h3>
+              <div class="voice-text-wrapper">
+                <p class="voice-text">
+                  仮想通貨という言葉を知ったのは10年以上前でした。仮想通貨🟰ビットコインぐらいにしかわからなくて、<br>
+                  ・どこで買えるのか？<br>
+                  ・どう保有するのか？<br>
+                  ・いざ保有して現金化できるのか？<br>
+                  全てがわからなくてただ、時間が過ぎていきました。大地君と出会い絶対に勉強をしたく大地塾に入会しました。<br>
+                  暗号通貨の始まりから持つ事の意味、今後の世界規模での暗号通貨の必要性、トレードの楽しさなどたくさんの学びと実体験をしています。大地塾に入会してまだ間もないですが胸を張って言えるのは「私はトレーダーです」
+                </p>
+              </div>
+              <div class="voice-read-more-container">
+                <button class="voice-read-more" aria-label="続きを読む" aria-expanded="false">
+                  <span>続きを読む</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> <!-- /.voice-slider-wrapper -->
+      </div>
+    </section>
+
+    <!-- ============================================================
          MESSAGE (代表メッセージ)
          ============================================================ -->
     <section class="section--gray" id="message">
@@ -712,6 +931,93 @@
     </section>
 
     <!-- ============================================================
+         OFFICIAL SNS
+         ============================================================ -->
+    <section class="section--white" id="sns">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="section-label">Official SNS</p>
+          <h2 class="section-title">公式SNS</h2>
+          <p style="text-align:center; color:var(--color-text-light); margin-top:16px;">
+            各プラットフォームで、暗号資産に関する有益な情報を無料で発信しています。
+          </p>
+        </div>
+
+        <div class="sns-slider fade-in">
+          <a href="https://line.me/R/ti/p/@817jyxon" target="_blank" rel="noopener" class="sns-card is-line">
+            <div class="sns-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <div class="sns-card-content">
+              <h3>公式LINE</h3>
+              <p>無料相談・限定情報はこちら</p>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/daichi._.sensei" target="_blank" rel="noopener"
+            class="sns-card is-instagram">
+            <div class="sns-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </div>
+            <div class="sns-card-content">
+              <h3>Instagram</h3>
+              <p>図解で学ぶ暗号資産の基礎</p>
+            </div>
+          </a>
+
+          <a href="https://x.com/daichi__sensei" target="_blank" rel="noopener" class="sns-card is-twitter">
+            <div class="sns-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </div>
+            <div class="sns-card-content">
+              <h3>X (Twitter)</h3>
+              <p>最新の市場分析と日々の思考</p>
+            </div>
+          </a>
+
+          <a href="https://www.tiktok.com/@daichijuku?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener"
+            class="sns-card is-tiktok">
+            <div class="sns-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+              </svg>
+            </div>
+            <div class="sns-card-content">
+              <h3>TikTok</h3>
+              <p>ショート動画でサクッと学ぶ</p>
+            </div>
+          </a>
+
+          <a href="https://note.com/daichijuku" target="_blank" rel="noopener" class="sns-card is-note">
+            <div class="sns-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+              </svg>
+            </div>
+            <div class="sns-card-content">
+              <h3>Note</h3>
+              <p>深い解説記事・コラム</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
          WHITE PAPER DL
          ============================================================ -->
     <section class="section--gray" id="whitepaper">
@@ -795,13 +1101,10 @@
           </a>
         </div>
         <div class="footer-links">
-          <a href="blog.html">ブログ</a>
-          <a href="#">特定商取引法に基づく表記</a>
-          <a href="#">プライバシーポリシー</a>
-          <a href="#">利用規約</a>
+          <a href="law.html">特定商取引法に基づく表記</a>
+          <a href="privacy-policy.html">プライバシーポリシー</a>
+          <a href="terms.html">利用規約</a>
         </div>
-        <p style="width:100%; text-align:center; font-size:0.75rem; color:rgba(255,255,255,0.4); margin-top:16px;">
-          独自Discordコミュニティ運営中 — 受講生同士の学び合いの場</p>
         <div class="footer-copyright">© 2026 Daichi Juku. All rights reserved.</div>
       </div>
     </div>
@@ -817,7 +1120,25 @@
     </div>
   </div>
 
-  <script src="script.js?v=2"></script>
+  <!-- ============================================================
+       VOICE MODAL
+       ============================================================ -->
+  <dialog class="voice-modal" id="voiceModal">
+    <div class="voice-modal-content">
+      <button class="voice-modal-close" id="voiceModalClose" aria-label="閉じる">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="voice-modal-body" id="voiceModalBody">
+        <!-- Content injected via JS -->
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js?v=7"></script>
 </body>
 
 </html>
