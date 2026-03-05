@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css?v=5">
     <style>
         /* Blog-specific styles */
         .blog-hero {
@@ -209,6 +209,15 @@
             margin: 32px 0 12px;
         }
 
+        .blog-modal-thumbnail {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            margin-bottom: 24px;
+            background: var(--color-bg);
+        }
+
         @media (max-width: 768px) {
             .blog-grid {
                 grid-template-columns: 1fr;
@@ -394,6 +403,7 @@
         function openPost(id) {
             const post = getPosts().find(p => p.id === id);
             if (!post) return;
+            console.log("Opening post:", post);
 
             const modal = document.getElementById('blogModal');
             const content = document.getElementById('blogModalContent');
@@ -403,6 +413,7 @@
           <span class="blog-card-date">${post.date}</span>
           <span class="blog-card-category">${post.category || '記事'}</span>
         </div>
+        ${post.image ? `<img src="${post.image}" alt="${post.title}" class="blog-modal-thumbnail">` : ''}
         <div class="blog-modal-content">${post.content}</div>
       `;
             modal.classList.add('is-open');

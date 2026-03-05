@@ -500,9 +500,24 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">画像URL（任意）</label>
-                    <input type="text" class="form-input" id="postImage" placeholder="https://example.com/image.jpg">
-                    <p class="form-hint">サムネイル画像のURLを入力してください。空欄の場合はプレースホルダーが表示されます。</p>
+                    <label class="form-label">サムネイル画像・アップロード（任意）</label>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" class="form-input" id="postImage"
+                            placeholder="https://example.com/image.jpg または画像をアップロード">
+                        <label class="btn-new"
+                            style="cursor: pointer; padding: 10px 14px; margin: 0; white-space: nowrap;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                            アップロード
+                            <input type="file" accept="image/*" style="display: none;"
+                                onchange="handleThumbnailUpload(this)">
+                        </label>
+                    </div>
+                    <p class="form-hint">URLを入力するか、画像をアップロードしてください（自動的に圧縮保存されます）。空欄の場合はプレースホルダーが表示されます。</p>
                 </div>
 
                 <div class="form-group">
@@ -516,6 +531,13 @@
                         <button type="button" class="toolbar-btn" onclick="insertBr()">改行</button>
                         <button type="button" class="toolbar-btn" onclick="insertTag('ul')">リスト</button>
                         <button type="button" class="toolbar-btn" onclick="insertLink()">リンク</button>
+                        <div class="toolbar-sep"></div>
+                        <label class="toolbar-btn"
+                            style="cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                            画像挿入
+                            <input type="file" accept="image/*" style="display: none;"
+                                onchange="handleContentImageUpload(this)">
+                        </label>
                     </div>
                     <textarea class="form-textarea" id="postContent"
                         placeholder="記事本文をHTML形式で入力してください...&#10;&#10;例:&#10;<p>段落テキスト</p>&#10;<h3>見出し</h3>&#10;<p><strong>太字</strong>や<em>斜体</em>も使えます</p>"></textarea>
@@ -546,7 +568,16 @@
         }
 
         function savePosts(posts) {
-            localStorage.setItem(BLOG_KEY, JSON.stringify(posts));
+            try {
+                localStorage.setItem(BLOG_KEY, JSON.stringify(posts));
+            } catch (e) {
+                if (e.name === 'QuotaExceededError') {
+                    alert('ブラウザの保存容量（約5MB）を超過しました。不要な記事を削除するか、画像のサイズを小さくしてください。');
+                } else {
+                    alert('保存に失敗しました。');
+                }
+                throw e; // re-throw to block local functions
+            }
         }
 
         function genId() {
@@ -707,6 +738,59 @@
             const pos = ta.selectionStart;
             ta.value = ta.value.substring(0, pos) + `<a href="${url}" target="_blank">${text || url}</a>` + ta.value.substring(pos);
             ta.focus();
+        }
+
+        // ── Image Upload & Compress Helpers ──
+        function resizeImageAndGetBase64(file, maxWidth, callback) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function () {
+                    let width = img.width;
+                    let height = img.height;
+                    if (width > maxWidth) {
+                        height = Math.round((height * maxWidth) / width);
+                        width = maxWidth;
+                    }
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, width, height);
+                    // Compress to JPEG for space-saving (except when transparency is needed, but mostly JPEG is better for size)
+                    const format = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+                    const quality = format === 'image/jpeg' ? 0.7 : 0.8;
+                    callback(canvas.toDataURL(format, quality));
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function handleThumbnailUpload(input) {
+            if (!input.files || input.files.length === 0) return;
+            const file = input.files[0];
+            showToast('画像を圧縮中...');
+            resizeImageAndGetBase64(file, 800, function (base64) {
+                document.getElementById('postImage').value = base64;
+                showToast('サムネイルの準備が完了しました');
+            });
+            input.value = '';
+        }
+
+        function handleContentImageUpload(input) {
+            if (!input.files || input.files.length === 0) return;
+            const file = input.files[0];
+            showToast('画像を圧縮中...');
+            resizeImageAndGetBase64(file, 800, function (base64) {
+                const ta = document.getElementById('postContent');
+                const pos = ta.selectionStart;
+                const imgTag = `<img src="${base64}" alt="アップロード画像" style="max-width: 100%; height: auto; border-radius: 8px; margin: 16px 0;">`;
+                ta.value = ta.value.substring(0, pos) + imgTag + ta.value.substring(pos);
+                ta.focus();
+                showToast('画像を本文に挿入しました');
+            });
+            input.value = '';
         }
 
         // ── Init ──
