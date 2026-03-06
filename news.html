@@ -1,446 +1,677 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ニュース（コラム・活動報告）｜初心者のための暗号資産スクール・大地塾</title>
-    <meta name="description" content="大地塾の最新ニュースです。暗号資産の学習コラムや活動報告・イベント情報をまとめてご覧いただけます。">
-    <link rel="canonical" href="https://daichijuku.com/column">
-    <meta name="robots" content="index,follow">
-    <meta property="og:title" content="記事一覧（コラム）｜大地塾">
-    <meta property="og:description" content="暗号資産（仮想通貨）について初心者から上級者まで学べるコラム記事一覧ページです。">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://daichijuku.com/column">
-    <meta property="og:image" content="https://daichijuku.com/public/ogp.png">
-    <meta property="og:locale" content="ja_JP">
-    <meta name="twitter:card" content="summary_large_image">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ニュース（コラム・活動報告）｜初心者のための暗号資産スクール・大地塾
+    </title>
+    <meta
+      name="description"
+      content="大地塾の最新ニュースです。暗号資産の学習コラムや活動報告・イベント情報をまとめてご覧いただけます。"
+    />
+    <link rel="canonical" href="https://daichijuku.com/column" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="記事一覧（コラム）｜大地塾" />
+    <meta
+      property="og:description"
+      content="暗号資産（仮想通貨）について初心者から上級者まで学べるコラム記事一覧ページです。"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://daichijuku.com/column" />
+    <meta property="og:image" content="https://daichijuku.com/public/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
     <!-- JSON-LD -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://daichijuku.com/#website",
-          "url": "https://daichijuku.com/",
-          "name": "大地塾",
-          "description": "暗号資産を初心者から学べるオンラインスクール",
-          "publisher": {
-            "@id": "https://daichijuku.com/#organization"
-          }
-        },
-        {
-          "@type": "EducationalOrganization",
-          "@id": "https://daichijuku.com/#organization",
-          "name": "大地塾",
-          "url": "https://daichijuku.com/",
-          "description": "暗号資産を初心者から学べるオンラインスクール",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://daichijuku.com/public/ogp.png"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "ホーム",
-              "item": "https://daichijuku.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "記事一覧",
-              "item": "https://daichijuku.com/column"
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://daichijuku.com/#website",
+            "url": "https://daichijuku.com/",
+            "name": "大地塾",
+            "description": "暗号資産を初心者から学べるオンラインスクール",
+            "publisher": {
+              "@id": "https://daichijuku.com/#organization"
             }
-          ]
-        }
-      ]
-    }
+          },
+          {
+            "@type": "EducationalOrganization",
+            "@id": "https://daichijuku.com/#organization",
+            "name": "大地塾",
+            "url": "https://daichijuku.com/",
+            "description": "暗号資産を初心者から学べるオンラインスクール",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://daichijuku.com/public/ogp.png"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://daichijuku.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "記事一覧",
+                "item": "https://daichijuku.com/column"
+              }
+            ]
+          }
+        ]
+      }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=6" />
     <style>
-        .blog-hero {
-            padding: 140px 0 60px;
-            background: var(--color-bg);
-            text-align: center;
-        }
+      .blog-hero {
+        padding: 140px 0 60px;
+        background: var(--color-bg);
+        text-align: center;
+      }
 
-        .category-filter {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 32px;
-            flex-wrap: wrap;
-        }
+      .category-filter {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
 
-        .category-btn {
-            padding: 8px 20px;
-            border-radius: 30px;
-            border: 1px solid var(--color-border);
-            background: var(--color-white);
-            color: var(--color-text);
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
+      .category-btn {
+        padding: 8px 20px;
+        border-radius: 30px;
+        border: 1px solid var(--color-border);
+        background: var(--color-white);
+        color: var(--color-text);
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
 
-        .category-btn.active,
-        .category-btn:hover {
-            background: var(--color-navy);
-            color: var(--color-white);
-            border-color: var(--color-navy);
-        }
+      .category-btn.active,
+      .category-btn:hover {
+        background: var(--color-navy);
+        color: var(--color-white);
+        border-color: var(--color-navy);
+      }
 
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        padding: 80px 0;
+      }
+
+      .blog-card {
+        background: var(--color-white);
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: all var(--duration) var(--ease);
+        text-decoration: none;
+        display: block;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      .blog-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+      }
+
+      .blog-card-image {
+        width: 100%;
+        height: 180px;
+        background: var(--color-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .blog-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .blog-card-body {
+        padding: 24px;
+      }
+
+      .blog-card-meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .blog-card-date {
+        font-family: var(--font-en);
+        font-size: 0.75rem;
+        color: var(--color-text-light);
+      }
+
+      .blog-card-category {
+        font-size: 0.65rem;
+        font-weight: 600;
+        color: var(--color-navy);
+        background: rgba(15, 28, 46, 0.08);
+        /* Soft subtle background for Column */
+        padding: 4px 12px;
+        border-radius: 20px;
+        letter-spacing: 0.03em;
+        display: inline-block;
+      }
+
+      /* Activity Report / Notice Specific Colors */
+      .blog-card[data-category="activity"] .blog-card-category {
+        color: var(--color-accent);
+        background: rgba(199, 169, 116, 0.15);
+        /* Soft accent */
+      }
+
+      /* Blog detail modal */
+      .blog-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 28, 46, 0.5);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        backdrop-filter: blur(4px);
+      }
+
+      .blog-modal-overlay.is-open {
+        display: flex;
+      }
+
+      .blog-modal {
+        background: var(--color-white);
+        border-radius: var(--radius-lg);
+        max-width: 720px;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 48px;
+        position: relative;
+      }
+
+      .blog-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        color: var(--color-text-muted);
+        transition: color 0.2s ease;
+      }
+
+      .blog-modal-close:hover {
+        color: var(--color-navy);
+      }
+
+      .blog-modal-meta {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+
+      .blog-modal-content {
+        font-size: 0.95rem;
+        line-height: 2;
+        color: var(--color-text);
+      }
+
+      @media (max-width: 768px) {
         .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            padding: 80px 0;
+          grid-template-columns: 1fr;
+          gap: 20px;
         }
 
-        .blog-card {
-            background: var(--color-white);
-            border: 1px solid var(--color-border-light);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            transition: all var(--duration) var(--ease);
-            text-decoration: none;
-            display: block;
-            color: inherit;
+        .blog-modal {
+          padding: 32px 24px;
+          margin: 20px;
         }
+      }
 
-        .blog-card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
+      .blog-card h2 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-navy);
+        line-height: 1.5;
+        margin-bottom: 8px;
+      }
 
-        .blog-card-image {
-            width: 100%;
-            height: 180px;
-            background: var(--color-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+      .blog-card p {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        line-height: 1.7;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
 
-        .blog-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+      @media (max-width: 1024px) and (min-width: 769px) {
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
-
-        .blog-card-body {
-            padding: 24px;
-        }
-
-        .blog-card-meta {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .blog-card-date {
-            font-family: var(--font-en);
-            font-size: 0.75rem;
-            color: var(--color-text-light);
-        }
-
-        .blog-card-category {
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: var(--color-accent);
-            background: var(--color-accent-light);
-            padding: 2px 10px;
-            border-radius: 20px;
-            letter-spacing: 0.03em;
-        }
-
-        .blog-card h2 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--color-navy);
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-
-        .blog-card p {
-            font-size: 0.85rem;
-            color: var(--color-text-muted);
-            line-height: 1.7;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        @media (max-width: 768px) {
-            .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .blog-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- HEADER (same as index) -->
-    <header class="site-header is-scrolled" id="header" style="box-shadow: var(--shadow-sm);">
-        <div class="container header-inner">
-            <a href="index.html" class="header-logo">大地塾 <span>暗号資産スクール</span></a>
-            <nav class="header-nav" id="headerNav">
-                <a href="index.html#about">大地塾とは</a>
-                <a href="index.html#curriculum">学べる内容</a>
-                <a href="index.html#courses">コース</a>
-                <a href="index.html#flow">学習の流れ</a>
-                <a href="index.html#faq">よくある質問</a>
-                <a href="news.html" style="color:var(--color-navy);">ニュース</a>
-                <a href="index.html#final-cta" class="header-cta btn">説明会を見る</a>
-            </nav>
-            <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+    <header
+      class="site-header is-scrolled"
+      id="header"
+      style="box-shadow: var(--shadow-sm)"
+    >
+      <div class="container header-inner">
+        <a href="index.html" class="header-logo"
+          >大地塾 <span>暗号資産スクール</span></a
+        >
+        <nav class="header-nav" id="headerNav">
+          <a href="index.html#about">大地塾とは</a>
+          <a href="index.html#curriculum">学べる内容</a>
+          <a href="index.html#courses">コース</a>
+          <a href="index.html#flow">学習の流れ</a>
+          <a href="index.html#faq">よくある質問</a>
+          <a href="news.html" style="color: var(--color-navy)">ニュース</a>
+          <a href="index.html#final-cta" class="header-cta btn">説明会を見る</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <main>
-        <!-- Blog Hero -->
-        <section class="blog-hero">
-            <div class="container fade-in">
-                <p class="section-label">Articles</p>
-                <h1 class="section-title">記事一覧</h1>
-                <p class="section-subtitle" style="margin:0 auto;">暗号資産の基礎から実践的な市場分析まで、レベルに合わせて学べるコラムをお届けします。</p>
+      <!-- Blog Hero -->
+      <section class="blog-hero">
+        <div class="container fade-in">
+          <p class="section-label">Articles</p>
+          <h1 class="section-title">記事一覧</h1>
+          <p class="section-subtitle" style="margin: 0 auto">
+            暗号資産の基礎から実践的な市場分析まで、レベルに合わせて学べるコラムをお届けします。
+          </p>
 
-                <div class="category-filter">
-                    <button class="category-btn active" data-category="all">すべて</button>
-                    <button class="category-btn" data-category="column">コラム</button>
-                    <button class="category-btn" data-category="activity">活動報告</button>
-                </div>
-            </div>
-        </section>
+          <div class="category-filter">
+            <button class="category-btn active" data-category="all">
+              すべて
+            </button>
+            <button class="category-btn" data-category="column">コラム</button>
+            <button class="category-btn" data-category="activity">
+              活動報告
+            </button>
+          </div>
+        </div>
+      </section>
 
-        <!-- Blog List -->
-        <section class="section--white">
-            <div class="container">
-                <div class="blog-grid" id="blogGrid">
-                    <!-- Static Article Example (SEO-friendly) -->
-                    <a href="article-template.html" class="blog-card fade-in article-item" data-category="column">
-                        <div class="blog-card-image">
-                            <!-- Using a placeholder or generated image -->
-                            <img src="img/placeholder.jpg" alt="初心者向け暗号資産の始め方" loading="lazy"
-                                onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\' viewBox=\'0 0 800 400\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%23f3f4f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%239ca3af\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dy=\'.3em\'%3ENo Image%3C/text%3E%3C/svg%3E'">
-                        </div>
-                        <div class="blog-card-body">
-                            <div class="blog-card-meta">
-                                <span class="blog-card-date">2026.03.05</span>
-                                <span class="blog-card-category">コラム</span>
-                            </div>
-                            <h2>初心者向け：暗号資産の始め方と注意点</h2>
-                            <p>これから暗号資産を始めたい方向けに、口座の開設から最初の購入方法、注意すべきセキュリティ設定までを分かりやすく解説します。</p>
-                        </div>
-                    </a>
+      <!-- Blog List -->
+      <section class="section--white">
+        <div class="container">
+          <div class="blog-grid" id="blogGrid">
+            <!-- Static Article Example (SEO-friendly) -->
+            <a
+              href="article-template.html"
+              class="blog-card fade-in article-item"
+              data-category="column"
+            >
+              <div class="blog-card-image">
+                <!-- Using a placeholder or generated image -->
+                <img
+                  src="img/placeholder.jpg"
+                  alt="初心者向け暗号資産の始め方"
+                  loading="lazy"
+                  onerror="
+                    this.src =
+                      'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\' viewBox=\'0 0 800 400\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%23f3f4f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%239ca3af\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dy=\'.3em\'%3ENo Image%3C/text%3E%3C/svg%3E'
+                  "
+                />
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-card-date">2026.03.05</span>
+                  <span class="blog-card-category">コラム</span>
                 </div>
-            </div>
-        </section>
+                <h2>初心者向け：暗号資産の始め方と注意点</h2>
+                <p>
+                  これから暗号資産を始めたい方向けに、口座の開設から最初の購入方法、注意すべきセキュリティ設定までを分かりやすく解説します。
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Blog Detail Modal -->
     <div class="blog-modal-overlay" id="blogModal">
-        <div class="blog-modal">
-            <button class="blog-modal-close" id="blogModalClose" aria-label="閉じる">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-            </button>
-            <div id="blogModalContent"></div>
-        </div>
+      <div class="blog-modal">
+        <button
+          class="blog-modal-close"
+          id="blogModalClose"
+          aria-label="閉じる"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div id="blogModalContent"></div>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-logo">大地塾</div>
-                <div class="footer-sns">
-                    <a href="https://www.instagram.com/daichi._.sensei" target="_blank" rel="noopener"
-                        aria-label="Instagram">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                        </svg>
-                    </a>
-                    <a href="https://x.com/daichi__sensei" target="_blank" rel="noopener" aria-label="X">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                        </svg>
-                    </a>
-                    <!-- Additional SNS icons omitted for brevity but intact in design -->
-                </div>
-                <div class="footer-links">
-                    <a href="law.html">特定商取引法に基づく表記</a>
-                    <a href="privacy-policy.html">プライバシーポリシー</a>
-                    <a href="terms.html">利用規約</a>
-                </div>
-                <div class="footer-copyright">© 2026 Daichi Juku. All rights reserved.</div>
-            </div>
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-logo">大地塾</div>
+          <div class="footer-sns">
+            <a
+              href="https://www.instagram.com/daichi._.sensei"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a
+              href="https://x.com/daichi__sensei"
+              target="_blank"
+              rel="noopener"
+              aria-label="X"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://note.com/daichijuku"
+              target="_blank"
+              rel="noopener"
+              aria-label="Note"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 20h9" />
+                <path
+                  d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.tiktok.com/@daichijuku?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+              rel="noopener"
+              aria-label="TikTok"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+              </svg>
+            </a>
+            <a
+              href="https://line.me/R/ti/p/@817jyxon"
+              target="_blank"
+              rel="noopener"
+              aria-label="LINE"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="footer-links">
+            <a href="law.html">特定商取引法に基づく表記</a>
+            <a href="privacy-policy.html">プライバシーポリシー</a>
+            <a href="terms.html">利用規約</a>
+          </div>
+          <div class="footer-copyright">
+            © 2026 Daichi Juku. All rights reserved.
+          </div>
         </div>
+      </div>
     </footer>
 
     <script>
-        // ── Unified News Rendering & Category Logic ──
-        document.addEventListener('DOMContentLoaded', () => {
-            const BLOG_KEY = 'daichijuku_blog_posts';
-            const grid = document.getElementById('blogGrid');
-            const buttons = document.querySelectorAll('.category-btn');
+      // ── Unified News Rendering & Category Logic ──
+      document.addEventListener("DOMContentLoaded", () => {
+        const BLOG_KEY = "daichijuku_blog_posts";
+        const grid = document.getElementById("blogGrid");
+        const buttons = document.querySelectorAll(".category-btn");
 
-            // 1. Fetch LocalStorage Posts (Activity Reports)
-            function getPosts() {
-                try {
-                    return JSON.parse(localStorage.getItem(BLOG_KEY)) || [];
-                } catch { return []; }
-            }
+        // 1. Fetch LocalStorage Posts (Activity Reports)
+        function getPosts() {
+          try {
+            return JSON.parse(localStorage.getItem(BLOG_KEY)) || [];
+          } catch {
+            return [];
+          }
+        }
 
-            const posts = getPosts().sort((a, b) => new Date(b.date) - new Date(a.date));
+        const posts = getPosts().sort(
+          (a, b) => new Date(b.date) - new Date(a.date),
+        );
 
-            // 2. Append Dynamic Posts to the Grid
-            if (posts.length > 0) {
-                const dynamicHtml = posts.map((p, i) => `
-                    <div class="blog-card fade-in article-item" data-category="activity" onclick="openPost('${p.id}')">
+        // 2. Append Dynamic Posts to the Grid
+        if (posts.length > 0) {
+          const dynamicHtml = posts
+            .map(
+              (p, i) => `
+                    <div class="blog-card fade-in article-item" data-category="activity" data-id="${p.id}">
                         <div class="blog-card-image">
                             ${p.image ? `<img src="${p.image}" alt="${p.title}">` : `<img src="img/placeholder.jpg" alt="${p.title}" style="opacity: 0.2">`}
                         </div>
                         <div class="blog-card-body">
                             <div class="blog-card-meta">
                                 <span class="blog-card-date">${p.date}</span>
-                                <span class="blog-card-category" style="background:var(--color-navy);color:#fff;">活動報告</span>
+                                <span class="blog-card-category">${p.category || "活動報告"}</span>
                             </div>
                             <h2>${p.title}</h2>
-                            <p>${p.excerpt || p.content.replace(/<[^>]*>/g, '').substring(0, 120) + '...'}</p>
+                            <p>${p.excerpt || p.content.replace(/<[^>]*>/g, "").substring(0, 120) + "..."}</p>
                         </div>
                     </div>
-                `).join('');
-                grid.insertAdjacentHTML('beforeend', dynamicHtml);
-            }
+                `,
+            )
+            .join("");
+          grid.insertAdjacentHTML("beforeend", dynamicHtml);
+        }
 
-            // 3. Category Filter Logic (Applies to both static and dynamic items)
-            const items = document.querySelectorAll('.article-item');
+        // 3. Category Filter Logic (Applies to both static and dynamic items)
+        const items = document.querySelectorAll(".article-item");
 
-            buttons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    buttons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            buttons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
 
-                    const category = btn.getAttribute('data-category');
+            const category = btn.getAttribute("data-category");
 
-                    let visibleCount = 0;
-                    items.forEach(item => {
-                        const itemCategory = item.getAttribute('data-category');
-                        if (category === 'all' || itemCategory === category) {
-                            item.style.display = 'block';
-                            item.classList.remove('is-visible');
-                            setTimeout(() => item.classList.add('is-visible'), 50);
-                            visibleCount++;
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-
-                    // Handle Empty State (Optional)
-                    let emptyMsg = document.getElementById('blogEmpty');
-                    if (!emptyMsg) {
-                        emptyMsg = document.createElement('div');
-                        emptyMsg.id = 'blogEmpty';
-                        emptyMsg.className = 'blog-empty';
-                        emptyMsg.innerHTML = '<h3>記事がありません</h3>';
-                        emptyMsg.style.textAlign = 'center';
-                        emptyMsg.style.padding = '40px';
-                        emptyMsg.style.gridColumn = '1 / -1';
-                        grid.appendChild(emptyMsg);
-                    }
-                    emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
-                });
+            let visibleCount = 0;
+            items.forEach((item) => {
+              const itemCategory = item.getAttribute("data-category");
+              if (category === "all" || itemCategory === category) {
+                item.style.display = "block";
+                item.classList.remove("is-visible");
+                setTimeout(() => item.classList.add("is-visible"), 50);
+                visibleCount++;
+              } else {
+                item.style.display = "none";
+              }
             });
 
-            // 4. Fade-in Observer Re-init
-            const fadeEls = document.querySelectorAll('.fade-in');
-            const ob = new IntersectionObserver(entries => {
-                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); ob.unobserve(e.target); } });
-            }, { threshold: 0.1 });
-            fadeEls.forEach(el => ob.observe(el));
-
-            // 5. Modal Logic for Dynamic Posts
-            window.openPost = function (id) {
-                const post = getPosts().find(p => p.id === id);
-                if (!post) return;
-
-                const modal = document.getElementById('blogModal');
-                const content = document.getElementById('blogModalContent');
-                content.innerHTML = `
-                    <h2>${post.title}</h2>
-                    <div class="blog-card-meta">
-                        <span class="blog-card-date">${post.date}</span>
-                        <span class="blog-card-category" style="background:var(--color-navy);color:#fff;">活動報告</span>
-                    </div>
-                    ${post.image ? `<img src="${post.image}" alt="${post.title}" style="max-width:100%;border-radius:8px;margin-bottom:24px;">` : ''}
-                    <div class="blog-modal-content" style="line-height:2;">${post.content}</div>
-                `;
-                modal.classList.add('is-open');
-                document.body.style.overflow = 'hidden';
-            };
-
-            const modal = document.getElementById('blogModal');
-            if (modal) {
-                modal.addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+            // Handle Empty State (Optional)
+            let emptyMsg = document.getElementById("blogEmpty");
+            if (!emptyMsg) {
+              emptyMsg = document.createElement("div");
+              emptyMsg.id = "blogEmpty";
+              emptyMsg.className = "blog-empty";
+              emptyMsg.innerHTML = "<h3>記事がありません</h3>";
+              emptyMsg.style.textAlign = "center";
+              emptyMsg.style.padding = "40px";
+              emptyMsg.style.gridColumn = "1 / -1";
+              grid.appendChild(emptyMsg);
             }
-            const modalClose = document.getElementById('blogModalClose');
-            if (modalClose) {
-                modalClose.addEventListener('click', closeModal);
-            }
-
-            function closeModal() {
-                if (modal) modal.classList.remove('is-open');
-                document.body.style.overflow = '';
-            }
-
-            // 6. Mobile Menu Re-init
-            const menuToggle = document.getElementById('menuToggle');
-            const headerNav = document.getElementById('headerNav');
-            const siteHeader = document.getElementById('header');
-
-            if (menuToggle && headerNav) {
-                menuToggle.addEventListener('click', () => {
-                    headerNav.classList.toggle('is-open');
-                    menuToggle.classList.toggle('is-active');
-                    if (siteHeader) siteHeader.classList.toggle('menu-open');
-                    document.body.style.overflow = headerNav.classList.contains('is-open') ? 'hidden' : '';
-                });
-            }
+            emptyMsg.style.display = visibleCount === 0 ? "block" : "none";
+          });
         });
-    </script>
-</body>
 
+        // 4. Fade-in Observer Re-init
+        const fadeEls = document.querySelectorAll(".fade-in");
+        const ob = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-visible");
+                ob.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        fadeEls.forEach((el) => ob.observe(el));
+
+        // 5. Modal Logic for Dynamic Posts
+        // Attach click listeners to cards instead of using inline onclick
+        document
+          .querySelectorAll('.blog-card[data-category="activity"]')
+          .forEach((card) => {
+            card.addEventListener("click", (e) => {
+              const id = card.getAttribute("data-id");
+              const post = getPosts().find((p) => String(p.id) === String(id));
+              if (!post) return;
+
+              const modal = document.getElementById("blogModal");
+              const content = document.getElementById("blogModalContent");
+              content.innerHTML = `
+                        <h2>${post.title}</h2>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date">${post.date}</span>
+                            <span class="blog-card-category">${post.category || "活動報告"}</span>
+                        </div>
+                        ${post.image ? `<img src="${post.image}" alt="${post.title}" style="max-width:100%;border-radius:8px;margin-bottom:24px;">` : ""}
+                        <div class="blog-modal-content" style="line-height:2;">${post.content}</div>
+                    `;
+              modal.classList.add("is-open");
+              document.body.style.overflow = "hidden";
+            });
+          });
+
+        const modal = document.getElementById("blogModal");
+        if (modal) {
+          modal.addEventListener("click", (e) => {
+            if (e.target === e.currentTarget) closeModal();
+          });
+        }
+        const modalClose = document.getElementById("blogModalClose");
+        if (modalClose) {
+          modalClose.addEventListener("click", closeModal);
+        }
+
+        function closeModal() {
+          if (modal) modal.classList.remove("is-open");
+          document.body.style.overflow = "";
+        }
+
+        // 6. Mobile Menu Re-init
+        const menuToggle = document.getElementById("menuToggle");
+        const headerNav = document.getElementById("headerNav");
+        const siteHeader = document.getElementById("header");
+
+        if (menuToggle && headerNav) {
+          menuToggle.addEventListener("click", () => {
+            headerNav.classList.toggle("is-open");
+            menuToggle.classList.toggle("is-active");
+            if (siteHeader) siteHeader.classList.toggle("menu-open");
+            document.body.style.overflow = headerNav.classList.contains(
+              "is-open",
+            )
+              ? "hidden"
+              : "";
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
