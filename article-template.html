@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- タイトルとディスクリプションは記事ごとに変更してください -->
+    <title>初心者向け：暗号資産の始め方と注意点｜大地塾コラム</title>
+    <meta name="description" content="これから暗号資産を始めたい方向けに、口座の開設から最初の購入方法、注意すべきセキュリティ設定までを分かりやすく解説します。">
+    <link rel="canonical" href="https://daichijuku.com/article-template.html">
+    <meta name="robots" content="index,follow">
+    <meta property="og:title" content="初心者向け：暗号資産の始め方と注意点｜大地塾コラム">
+    <meta property="og:description" content="これから暗号資産を始めたい方向けに、口座の開設から最初の購入方法、注意すべきセキュリティ設定までを分かりやすく解説します。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://daichijuku.com/article-template.html">
+    <meta property="og:image" content="https://daichijuku.com/public/ogp.png"> <!-- 記事サムネイルがある場合変更 -->
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- JSON-LD (Article & Breadcrumb) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://daichijuku.com/article-template.html#article",
+          "headline": "初心者向け：暗号資産の始め方と注意点",
+          "description": "これから暗号資産を始めたい方向けに、口座の開設から最初の購入方法、注意すべきセキュリティ設定までを分かりやすく解説します。",
+          "image": "https://daichijuku.com/public/ogp.png",
+          "datePublished": "2026-03-05T08:00:00+09:00",
+          "dateModified": "2026-03-05T08:00:00+09:00",
+          "author": {
+            "@type": "Organization",
+            "name": "大地塾"
+          },
+          "publisher": {
+            "@type": "EducationalOrganization",
+            "@id": "https://daichijuku.com/#organization",
+            "name": "大地塾",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://daichijuku.com/public/ogp.png"
+            }
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://daichijuku.com/article-template.html"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "ホーム",
+              "item": "https://daichijuku.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "ニュース",
+              "item": "https://daichijuku.com/news.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "初心者向け：暗号資産の始め方と注意点",
+              "item": "https://daichijuku.com/article-template.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=6">
+    <style>
+        .article-hero {
+            padding: 120px 0 60px;
+            background: var(--color-bg);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .article-date {
+            font-family: var(--font-en);
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        .article-category {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .article-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--color-navy);
+            line-height: 1.4;
+            margin-bottom: 32px;
+        }
+
+        .article-thumbnail {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: 48px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--color-text);
+        }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-navy);
+            margin: 60px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--color-border-light);
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-navy);
+            margin: 40px 0 16px;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            margin: 32px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: block;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            padding: 60px 0 80px;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border-light);
+        }
+
+        .related-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--color-navy);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .blog-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all var(--duration) var(--ease);
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .blog-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 160px;
+            background: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-card-body {
+            padding: 20px;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .blog-card-date {
+            font-family: var(--font-en);
+            font-size: 0.7rem;
+            color: var(--color-text-light);
+        }
+
+        .blog-card-category {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .blog-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-navy);
+            line-height: 1.4;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-title {
+                margin-bottom: 24px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header is-scrolled" id="header" style="box-shadow: var(--shadow-sm);">
+        <div class="container header-inner">
+            <a href="index.html" class="header-logo">大地塾 <span>暗号資産スクール</span></a>
+            <nav class="header-nav" id="headerNav">
+                <a href="index.html#about">大地塾とは</a>
+                <a href="index.html#curriculum">学べる内容</a>
+                <a href="index.html#courses">コース</a>
+                <a href="index.html#flow">学習の流れ</a>
+                <a href="index.html#faq">よくある質問</a>
+                <a href="news.html">ニュース</a>
+                <a href="index.html#final-cta" class="header-cta btn">説明会を見る</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Article Header -->
+        <article>
+            <section class="article-hero">
+                <div class="container" style="max-width: 800px;">
+                    <div class="article-meta fade-in">
+                        <span class="article-category" style="background:var(--color-navy);color:#fff;">コラム</span>
+                        <time class="article-date" datetime="2026-03-05">2026.03.05</time>
+                    </div>
+                    <h1 class="article-title fade-in">初心者向け：暗号資産の始め方と注意点</h1>
+                </div>
+            </section>
+
+            <!-- Article Body -->
+            <section class="container">
+                <img src="img/placeholder.jpg" alt="初心者向け暗号資産の始め方" class="article-thumbnail fade-in" loading="lazy"
+                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\' viewBox=\'0 0 800 400\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%23f3f4f6\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%239ca3af\' font-size=\'24\' font-family=\'sans-serif\' text-anchor=\'middle\' dy=\'.3em\'%3ENo Image%3C/text%3E%3C/svg%3E'">
+
+                <div class="article-content fade-in">
+                    <p>暗号資産をこれから始めようと思っているけれど、「何から手をつけていいか分からない」「危ないんじゃないか」と不安に感じる方も多いでしょう。ここでは、初めての方が安全に始めるための基礎知識をまとめました。
+                    </p>
+
+                    <h2>1. 取引所の口座を開設する</h2>
+                    <p>暗号資産を購入するには、まず「暗号資産取引所」に口座を開設する必要があります。日本国内には金融庁に登録された安全な取引所が複数あります。</p>
+                    <h3>選び方のポイント</h3>
+                    <p>初心者の場合は、画面の見やすさやアプリの使いやすさを重視することをおすすめします。<br>また、少額から投資を始められるところを選ぶと良いでしょう。</p>
+
+                    <h2>2. セキュリティ設定（二段階認証）を必ず行う</h2>
+                    <p>口座を開設したら、絶対に忘れてはならないのが「二段階認証」の設定です。パスワードだけでなく、スマホアプリを使った第二のパスワードを設定することで、不正アクセスのリスクを劇的に下げることができます。
+                    </p>
+
+                    <h2>3. 少額からスタートする</h2>
+                    <p>いきなり大きな金額を投資するのは非常に危険です。まずは数千円〜1万円程度の「なくなっても生活に困らないお金（余剰資金）」でビットコインなどを購入し、値動きの感覚を掴むところから始めましょう。
+                    </p>
+
+                    <p>正しい知識を持ち、リスク管理を徹底すれば、暗号資産は新しい金融の仕組みとして非常に魅力的です。焦らず一歩ずつ学んでいきましょう。</p>
+                </div>
+            </section>
+        </article>
+
+        <!-- Related Articles (internal links for SEO) -->
+        <aside class="related-articles">
+            <div class="container" style="max-width: 900px;">
+                <h2 class="related-header fade-in">関連記事</h2>
+                <div class="related-grid">
+                    <a href="article-template.html" class="blog-card fade-in">
+                        <div class="blog-card-image">
+                            <!-- Placeholder -->
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3C/svg%3E"
+                                alt="記事" loading="lazy">
+                        </div>
+                        <div class="blog-card-body">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-date">2026.03.01</span>
+                                <span class="blog-card-category"
+                                    style="background:var(--color-navy);color:#fff;">コラム</span>
+                            </div>
+                            <h3>二段階認証の正しい設定方法と注意点</h3>
+                        </div>
+                    </a>
+                    <a href="article-template.html" class="blog-card fade-in fade-in-delay-1">
+                        <div class="blog-card-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3C/svg%3E"
+                                alt="記事" loading="lazy">
+                        </div>
+                        <div class="blog-card-body">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-date">2026.02.25</span>
+                                <span class="blog-card-category"
+                                    style="background:var(--color-navy);color:#fff;">コラム</span>
+                            </div>
+                            <h3>余剰資金で始める暗号資産の基本</h3>
+                        </div>
+                    </a>
+                    <a href="article-template.html" class="blog-card fade-in fade-in-delay-2">
+                        <div class="blog-card-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23f3f4f6'/%3E%3C/svg%3E"
+                                alt="記事" loading="lazy">
+                        </div>
+                        <div class="blog-card-body">
+                            <div class="blog-card-meta">
+                                <span class="blog-card-date">2026.02.20</span>
+                                <span class="blog-card-category"
+                                    style="background:var(--color-navy);color:#fff;">コラム</span>
+                            </div>
+                            <h3>米国CPI発表後の市場をどう読み解くか</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">大地塾</div>
+                <div class="footer-sns">
+                    <a href="https://www.instagram.com/daichi._.sensei" target="_blank" rel="noopener"
+                        aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        </svg>
+                    </a>
+                    <!-- Additional SNS icons omitted for brevity but intact in design -->
+                </div>
+                <div class="footer-links">
+                    <a href="law.html">特定商取引法に基づく表記</a>
+                    <a href="privacy-policy.html">プライバシーポリシー</a>
+                    <a href="terms.html">利用規約</a>
+                </div>
+                <div class="footer-copyright">© 2026 Daichi Juku. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const headerNav = document.getElementById('headerNav');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                headerNav.classList.toggle('is-open');
+                menuToggle.classList.toggle('is-active');
+            });
+        }
+
+        // Scroll Animation
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const ob = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); ob.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        fadeEls.forEach(el => ob.observe(el));
+    </script>
+</body>
+
+</html>

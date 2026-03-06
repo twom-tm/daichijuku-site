@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理画面｜大地塾ブログ</title>
+    <title>活動報告管理画面｜大地塾</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -436,11 +436,11 @@
                 <rect x="14" y="14" width="7" height="7" />
                 <rect x="3" y="14" width="7" height="7" />
             </svg>
-            大地塾 管理画面 <span>ブログ管理</span>
+            大地塾 管理画面 <span>活動報告管理</span>
         </h1>
         <div class="admin-header-links">
             <a href="index.html">← サイトを見る</a>
-            <a href="blog.html">ブログページ</a>
+            <a href="news.html">ニュースページ</a>
         </div>
     </header>
 
@@ -448,7 +448,10 @@
         <!-- Sidebar: Post List -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2>記事一覧</h2>
+                <div>
+                    <div class="sidebar-logo">大地塾</div>
+                    <div style="font-size: 0.8rem; color: #a0aec0; margin-top: 4px;">活動報告管理システム</div>
+                </div>
                 <button class="btn-new" onclick="newPost()">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5">
@@ -484,11 +487,7 @@
                     <div class="form-group">
                         <label class="form-label">カテゴリ</label>
                         <select class="form-select" id="postCategory">
-                            <option value="市場分析">市場分析</option>
-                            <option value="学習ヒント">学習ヒント</option>
                             <option value="活動報告">活動報告</option>
-                            <option value="イベント">イベント</option>
-                            <option value="ニュース">ニュース</option>
                             <option value="お知らせ">お知らせ</option>
                         </select>
                     </div>
