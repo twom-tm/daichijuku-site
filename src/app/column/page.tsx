@@ -187,7 +187,7 @@ export default function Column() {
                     <div className="blog-grid" id="blogGrid">
 
                         {visibleStaticPosts.map(post => (
-                            <Link href={post.link} key={post.id} className="blog-card fade-in is-visible" data-category="column">
+                            <Link href={post.link} key={post.id} className="blog-card fade-in is-visible" data-category="column" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <div className="blog-card-image">
                                     <Image src={post.image} alt={post.title} width={400} height={200} style={{ objectFit: 'cover' }} />
                                 </div>
