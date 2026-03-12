@@ -43,6 +43,7 @@ export const metadata: Metadata = {
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScriptRunner from "./components/ScriptRunner";
 import { Analytics } from "@vercel/analytics/react";
 
 export default function RootLayout({
@@ -90,6 +91,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Script src="/script.js" strategy="lazyOnload" />
+        <ScriptRunner />
         <Analytics />
       </body>
     </html >

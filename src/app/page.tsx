@@ -777,7 +777,7 @@ export default function Home() {
 
             <div className="message-layout fade-in">
               <div className="message-photo">
-                <img src="img/daichi-sensei.jpg" alt="塾長 我妻 大地" loading="lazy" decoding="async" />
+                <img src="/img/daichi-sensei.jpg" alt="塾長 我妻 大地" loading="lazy" decoding="async" />
               </div>
               <div className="message-body">
                 <h3>「守れる人」が、最後に残る。</h3>
@@ -1028,87 +1028,7 @@ export default function Home() {
           </div>
         </div>
       </dialog>
-      <Script id="home-script" strategy="lazyOnload">
-        {`
-          // Number Counter Animation
-          const counters = document.querySelectorAll('.stat-number span[data-count]');
-          let counted = false;
 
-          const startCounting = () => {
-            if (counted) return;
-            counters.forEach(counter => {
-              const target = +counter.getAttribute('data-count');
-              const duration = 2000;
-              const step = target / (duration / 16);
-              let current = 0;
-
-              const updateCounter = () => {
-                current += step;
-                if (current < target) {
-                  counter.innerText = Math.ceil(current);
-                  requestAnimationFrame(updateCounter);
-                } else {
-                  counter.innerText = target;
-                }
-              };
-              updateCounter();
-            });
-            counted = true;
-          };
-
-          const statsSection = document.getElementById('stats');
-          if (statsSection) {
-            const observer = new IntersectionObserver((entries) => {
-              if (entries[0].isIntersecting) {
-                startCounting();
-                observer.disconnect();
-              }
-            });
-            observer.observe(statsSection);
-          }
-
-          // Fade-in Animation Observer
-          const fadeEls = document.querySelectorAll('.fade-in');
-          const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                fadeObserver.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.1 });
-
-          fadeEls.forEach(el => fadeObserver.observe(el));
-
-          // FAQ Accordion
-          const faqItems = document.querySelectorAll('.faq-item');
-          faqItems.forEach(item => {
-            const btn = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            if (btn && answer) {
-              btn.addEventListener('click', () => {
-                const isOpen = item.classList.contains('is-open');
-                
-                // Close all others
-                faqItems.forEach(otherItem => {
-                  otherItem.classList.remove('is-open');
-                  const otherBtn = otherItem.querySelector('.faq-question');
-                  if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-                  const otherAnswer = otherItem.querySelector('.faq-answer');
-                  if (otherAnswer) otherAnswer.style.maxHeight = null;
-                });
-
-                // Open if it wasn't already open
-                if (!isOpen) {
-                  item.classList.add('is-open');
-                  btn.setAttribute('aria-expanded', 'true');
-                  answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
-              });
-            }
-          });
-        `}
-      </Script>
     </>
   );
 }

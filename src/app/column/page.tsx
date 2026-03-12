@@ -55,7 +55,7 @@ export default function Column() {
             date: "2026.03.05",
             type: "column",
             excerpt: "これから暗号資産を始めたい方向けに、口座の開設から最初の購入方法、注意すべきセキュリティ設定までを分かりやすく解説します。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_beginner.png",
             link: "/column/beginner"
         },
         {
@@ -65,7 +65,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "仮想通貨（暗号資産）の基本的な仕組みを、初心者にもわかりやすく解説。ビットコインやイーサリアムなど、デジタル通貨がどのように動いているのかを学びましょう。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_whatscrypto.png",
             link: "/column/what-is-crypto"
         },
         {
@@ -75,7 +75,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "仮想通貨を始めたい初心者向けの完全ガイド。口座開設から最初の購入、セキュリティ対策まで、ステップバイステップで解説します。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_startcrypto.png",
             link: "/column/how-to-start-crypto"
         },
         {
@@ -85,7 +85,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "ビットコイン（BTC）の基本的な仕組み、誕生の背景、なぜ価値があるのかを初心者向けにわかりやすく解説します。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_whatisbitcoin.png",
             link: "/column/what-is-bitcoin"
         },
         {
@@ -95,7 +95,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "仮想通貨を初めて購入する方向けに、取引所での買い方を丁寧に解説。販売所と取引所の違いも紹介します。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_howtobuycrypto.png",
             link: "/column/how-to-buy-crypto"
         },
         {
@@ -105,7 +105,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "仮想通貨を効率的に学ぶための最短ルートを解説。書籍、動画、実践など、初心者が最速で知識を身につける方法を紹介します。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_howtostudy.png",
             link: "/column/how-to-study-crypto"
         },
         {
@@ -115,7 +115,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "仮想通貨で必ず出てくる基本用語を初心者向けにわかりやすく解説。ブロックチェーン、ウォレット、マイニングなどをまとめました。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_cryptoglossary.png",
             link: "/column/crypto-glossary"
         },
         {
@@ -125,7 +125,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "仮想通貨のメリットとデメリットを初心者向けに公平に解説。投資を始める前に知っておくべきリスクと可能性をまとめます。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_proscons.png",
             link: "/column/crypto-pros-cons"
         },
         {
@@ -135,7 +135,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "「暗号資産」と「仮想通貨」の違いをわかりやすく解説。名称変更の背景や法律上の定義、正しい使い分けについて説明します。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_cryptovsvirtual.png",
             link: "/column/crypto-vs-virtual-currency"
         },
         {
@@ -145,7 +145,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "ブロックチェーン技術の仕組みを初心者向けにわかりやすく解説。なぜ改ざんが困難なのか、仮想通貨以外の活用事例も紹介します。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_whatisblockchain.png",
             link: "/column/what-is-blockchain"
         },
         {
@@ -155,7 +155,7 @@ export default function Column() {
             date: "2026.03.07",
             type: "column",
             excerpt: "形のない仮想通貨にはなぜ価値があるのか？需要と供給、希少性、ユーティリティなど、価値の根拠を初心者向けに解説します。",
-            image: "/img/placeholder.jpg",
+            image: "/img/thumb_whyvalue.png",
             link: "/column/why-crypto-has-value"
         },
     ];
