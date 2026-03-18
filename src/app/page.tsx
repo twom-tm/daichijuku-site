@@ -32,7 +32,7 @@ export default function Home() {
                 「デジタル難民を作らない」ための金融教育。
               </p>
               <div className="btn-group">
-                <a href="https://lstep.app/form/81805/SzS4WO/314e59" className="btn btn--primary btn--lg">説明会を見る</a>
+                <a href="https://lstep.app/form/81805/ths59z/39634c" className="btn btn--primary btn--lg">説明会を見る</a>
                 <a href="https://line.me/R/ti/p/@817jyxon" target="_blank" rel="noopener"
                   className="btn btn--outline btn--lg">無料ニュースを受け取る</a>
               </div>
@@ -1000,7 +1000,7 @@ export default function Home() {
               まずは無料の説明会、またはLINE登録からお気軽にどうぞ。
             </p>
             <div className="btn-group">
-              <a href="https://lstep.app/form/81805/SzS4WO/314e59" className="btn btn--white btn--lg">説明会を見る</a>
+              <a href="https://lstep.app/form/81805/ths59z/39634c" className="btn btn--white btn--lg">説明会を見る</a>
               <a href="https://line.me/R/ti/p/@817jyxon" target="_blank" rel="noopener"
                 className="btn btn--accent btn--lg">LINE登録する</a>
             </div>
@@ -1010,7 +1010,7 @@ export default function Home() {
       </main>
       <div className="sticky-cta" id="stickyCta">
         <div className="sticky-cta-inner">
-          <a href="https://lstep.app/form/81805/SzS4WO/314e59" className="btn btn--primary">説明会を見る</a>
+          <a href="https://lstep.app/form/81805/ths59z/39634c" className="btn btn--primary">説明会を見る</a>
           <a href="https://line.me/R/ti/p/@817jyxon" target="_blank" rel="noopener" className="btn btn--accent">LINE登録</a>
         </div>
       </div>

@@ -45,7 +45,7 @@ export default function Header() {
                     <Link href="/#voice" onClick={closeMenu}>お客様の声</Link>
                     <Link href="/#faq" onClick={closeMenu}>よくある質問</Link>
                     <Link href="/column" onClick={closeMenu}>ニュース</Link>
-                    <Link href="https://lstep.app/form/81805/SzS4WO/314e59" className="header-cta btn" onClick={closeMenu}>説明会を見る</Link>
+                    <Link href="https://lstep.app/form/81805/ths59z/39634c" className="header-cta btn" onClick={closeMenu}>説明会を見る</Link>
                 </nav>
                 <button
                     className={`menu-toggle ${isMenuOpen ? "is-active" : ""}`}
